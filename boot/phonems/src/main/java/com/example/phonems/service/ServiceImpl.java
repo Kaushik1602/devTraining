@@ -28,13 +28,15 @@ public class ServiceImpl implements IService{
     }
 
     @Override
-    public Contact searchContactByGivenPhoneNo(Long number) {
+    public Contact searchContactByGivenPhoneNo(long number) {
+        Contact result = new Contact();
         for (Contact contact:contactList){
             if (contact.getPhoneNumber()==number){
-                return contact;
+                result = contact;
+                break;
             }
         }
-        return null;
+        return result;
     }
 
     @Override
@@ -49,8 +51,20 @@ public class ServiceImpl implements IService{
     }
 
     @Override
-    public Contact removeContact(Long number) {
-        contactList.remove(searchContactByGivenPhoneNo(number));
-        return searchContactByGivenPhoneNo(number);
+    public Contact removeContact(long number) {
+        Contact removeContact = searchContactByGivenPhoneNo(number);
+        contactList.remove(removeContact);
+        return removeContact;
+    }
+
+    @Override
+    public Contact updateEmail(long number, String email) {
+        for (Contact contact:contactList){
+            if (contact.getPhoneNumber()==number){
+                contact.setEmailId(email);
+                return contact;
+            }
+        }
+        return null;
     }
 }

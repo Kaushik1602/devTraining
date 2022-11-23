@@ -10,10 +10,12 @@ public interface IService {
 
     public List<Contact> displayAll();
 
-    public Contact searchContactByGivenPhoneNo(Long number);
+    public Contact searchContactByGivenPhoneNo(long number);
 
     public List<Contact> searchContactByFirstName(String firstName);
 
-    public Contact removeContact(Long number);
+    public Contact removeContact(long number);
+
+    public Contact updateEmail(long number, String email);
 
 }
