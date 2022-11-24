@@ -1,6 +1,8 @@
 package com.example.phonems.service;
 
 import com.example.phonems.entity.Contact;
+import com.example.phonems.validations.Validation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -9,17 +11,33 @@ import java.util.List;
 @Service
 public class ServiceImpl implements IService{
 
-    List<Contact> contactList = new ArrayList<>();
+    private List<Contact> contactList = new ArrayList<>();
+
+    @Autowired
+    Validation validation;
 
     @Override
-    public Contact addContact(Contact contact) {
-        Contact result = new Contact();
-        result.setFirstName(contact.getFirstName());
-        result.setLastName(contact.getLastName());
-        result.setEmailId(contact.getEmailId());
-        result.setPhoneNumber(contact.getPhoneNumber());
-        contactList.add(result);
-        return result;
+    public String addContact(Contact contact) {
+        Contact contactDetails = new Contact();
+
+        if (!validation.validateFirstName(contact.getFirstName()))
+            return "Enter valid Firstname";
+        contactDetails.setFirstName(contact.getFirstName());
+
+        if (!validation.validateLastName(contact.getLastName()))
+            return "Enter valid Lastname";
+        contactDetails.setLastName(contact.getLastName());
+
+        if (!validation.validateEmail(contact.getEmailId()))
+            return "Enter valid Email";
+        contactDetails.setEmailId(contact.getEmailId());
+
+        if (!validation.validateNumber(contact.getPhoneNumber()))
+            return "Enter valid Phone Number";
+        contactDetails.setPhoneNumber(contact.getPhoneNumber());
+
+        contactList.add(contactDetails);
+        return "Contact Added";
     }
 
     @Override

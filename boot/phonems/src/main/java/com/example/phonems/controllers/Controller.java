@@ -16,11 +16,11 @@ public class Controller {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/customers/add")
-    private Contact add(@RequestBody Contact contact){
+    private String add(@RequestBody Contact contact){
         return service.addContact(contact);
     }
 
-    @ResponseStatus(HttpStatus.FOUND)
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/customers/view")
     private List<Contact> viewAll(){
         return service.displayAll();
@@ -38,7 +38,7 @@ public class Controller {
         return service.searchContactByFirstName(firstName);
     }
 
-    @ResponseStatus(HttpStatus.OK)
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @DeleteMapping("/customers/delete/{phoneNumber}")
     private Contact deleteByNumber(@PathVariable long phoneNumber){
         return service.removeContact(phoneNumber);

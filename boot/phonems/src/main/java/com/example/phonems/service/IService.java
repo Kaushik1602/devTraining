@@ -6,13 +6,14 @@ import java.util.List;
 
 public interface IService {
 
-    public Contact addContact(Contact contact);
+    public String addContact(Contact contact);
 
     public List<Contact> displayAll();
 
     public Contact searchContactByGivenPhoneNo(long number);
 
     public List<Contact> searchContactByFirstName(String firstName);
+
     public Contact removeContact(long number);
 
     public Contact updateEmail(long number, String email);
