@@ -50,5 +50,21 @@ public class ServiceImpl implements IService{
         return result;
     }
 
-   
+    @Override
+    public Contact removeContact(long number) {
+        Contact removeContact = searchContactByGivenPhoneNo(number);
+        contactList.remove(removeContact);
+        return removeContact;
+    }
+
+    @Override
+    public Contact updateEmail(long number, String email) {
+        for (Contact contact:contactList){
+            if (contact.getPhoneNumber()==number){
+                contact.setEmailId(email);
+                return contact;
+            }
+        }
+        return null;
+    }
 }

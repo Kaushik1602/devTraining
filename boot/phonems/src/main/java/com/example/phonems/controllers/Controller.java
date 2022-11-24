@@ -38,4 +38,18 @@ public class Controller {
         return service.searchContactByFirstName(firstName);
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @DeleteMapping("/customers/delete/{phoneNumber}")
+    private Contact deleteByNumber(@PathVariable long phoneNumber){
+        return service.removeContact(phoneNumber);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PutMapping("/customers/update/{phoneNumber}")
+    private Contact updateEmail(@PathVariable long phoneNumber, @RequestBody String emailId){
+        return service.updateEmail(phoneNumber,emailId);
+    }
+
+
+
 }
