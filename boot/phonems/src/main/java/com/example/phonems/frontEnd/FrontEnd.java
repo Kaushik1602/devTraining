@@ -3,7 +3,6 @@ package com.example.phonems.frontEnd;
 import com.example.phonems.entity.Contact;
 import com.example.phonems.service.IService;
 import com.example.phonems.service.ServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class FrontEnd {
 
