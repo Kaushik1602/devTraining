@@ -14,8 +14,4 @@ public interface IService {
 
     public List<Contact> searchContactByFirstName(String firstName);
 
-    public Contact removeContact(long number);
-
-    public Contact updateEmail(long number, String email);
-
 }
