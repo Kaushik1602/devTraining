@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ServiceImpl implements IService{
+public class ServiceImpl implements IService {
 
     private List<Contact> contactList = new ArrayList<>();
 
@@ -48,8 +48,8 @@ public class ServiceImpl implements IService{
     @Override
     public Contact searchContactByGivenPhoneNo(long number) {
         Contact result = new Contact();
-        for (Contact contact:contactList){
-            if (contact.getPhoneNumber()==number){
+        for (Contact contact : contactList) {
+            if (contact.getPhoneNumber() == number) {
                 result = contact;
                 break;
             }
@@ -59,9 +59,9 @@ public class ServiceImpl implements IService{
 
     @Override
     public List<Contact> searchContactByFirstName(String firstName) {
-        List<Contact> result=new ArrayList<>();
-        for (Contact contact:contactList){
-            if (contact.getFirstName().equals(firstName)){
+        List<Contact> result = new ArrayList<>();
+        for (Contact contact : contactList) {
+            if (contact.getFirstName().equals(firstName)) {
                 result.add(contact);
             }
         }
@@ -77,8 +77,8 @@ public class ServiceImpl implements IService{
 
     @Override
     public Contact updateEmail(long number, String email) {
-        for (Contact contact:contactList){
-            if (contact.getPhoneNumber()==number){
+        for (Contact contact : contactList) {
+            if (contact.getPhoneNumber() == number) {
                 contact.setEmailId(email);
                 return contact;
             }
