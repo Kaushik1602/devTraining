@@ -44,4 +44,7 @@ public class Validation {
         }
         return numbers;
     }
+    public boolean validateForDelete(){
+        return false;
+    }
 }
