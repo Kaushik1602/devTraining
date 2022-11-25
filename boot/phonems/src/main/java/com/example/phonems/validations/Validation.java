@@ -35,6 +35,10 @@ public class Validation {
         return validation.matcher(email).matches() && email.length() != 0;
     }
 
+    public boolean validateAge(int age){
+        return age>0;
+    }
+
     public List<Long> numbers(){
         List<Long> numbers = new ArrayList<>();
         List<Contact> contacts = service.displayAll();

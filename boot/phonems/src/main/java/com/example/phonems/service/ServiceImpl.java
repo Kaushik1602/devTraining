@@ -7,8 +7,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 @Service
 public class ServiceImpl implements IService {
@@ -38,6 +36,10 @@ public class ServiceImpl implements IService {
         if (!validation.validateNumber(contact.getPhoneNumber()))
             return "Enter valid Phone Number";
         contactDetails.setPhoneNumber(contact.getPhoneNumber());
+
+        if (!validation.validateAge(contact.getAge()))
+            return "Enter valid Age";
+        contactDetails.setAge(contact.getAge());
 
         contactList.add(contactDetails);
         return "Contact Added";
