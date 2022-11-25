@@ -7,14 +7,18 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class ServiceImpl implements IService {
 
     private List<Contact> contactList = new ArrayList<>();
-
+    Contact contact=new Contact();
     @Autowired
     Validation validation;
+
+
 
     @Override
     public String addContact(Contact contact) {
@@ -69,20 +73,34 @@ public class ServiceImpl implements IService {
     }
 
     @Override
-    public Contact removeContact(long number) {
-        Contact removeContact = searchContactByGivenPhoneNo(number);
-        contactList.remove(removeContact);
-        return removeContact;
+    public String removeContact(long phoneNumber) {
+        String string = String.valueOf(phoneNumber);
+        if (string.length() != 10 ) {
+            return "enter correct phone number";
+        }
+            for (Contact contact : contactList) {
+                if (contact.getPhoneNumber() == phoneNumber) {
+                    contactList.remove(contact);
+                    return "contact removed.";
+                }
+            }
+        return "Phone number not found.";
     }
 
     @Override
-    public Contact updateEmail(long number, String email) {
+    public String updateEmail(long phoneNumber, String email){
+        String string = String.valueOf(phoneNumber);
+        String regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(email);
         for (Contact contact : contactList) {
-            if (contact.getPhoneNumber() == number) {
-                contact.setEmailId(email);
-                return contact;
+            if (contact.getPhoneNumber() == phoneNumber) {
+                if ((matcher.matches() || string.length() != 10)) {
+                    contact.setEmailId(email);
+                    return "email updated successfully";
+                }
             }
         }
-        return null;
+        return "enter valid details";
     }
 }
