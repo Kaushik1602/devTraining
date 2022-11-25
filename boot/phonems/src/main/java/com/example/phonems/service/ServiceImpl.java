@@ -2,7 +2,7 @@ package com.example.phonems.service;
 
 import com.example.phonems.entity.Contact;
 import com.example.phonems.exceptions.EnterValidDataException;
-import com.example.phonems.exceptions.NoNotFoundException;
+import com.example.phonems.exceptions.ContactNotFoundException;
 import com.example.phonems.validations.Validation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +14,11 @@ import java.util.List;
 public class ServiceImpl implements IService {
 
     private List<Contact> contactList = new ArrayList<>();
+
+    public List<Contact> getContactList() {
+        return contactList;
+    }
+
     Contact contact = new Contact();
     @Autowired
     Validation validation;
@@ -37,13 +42,18 @@ public class ServiceImpl implements IService {
 
             if (!validation.validateNumber(contact.getPhoneNumber()))
                 throw new EnterValidDataException("Enter valid Number " + contact.getPhoneNumber());
-
             contactDetails.setPhoneNumber(contact.getPhoneNumber());
 
             if (!validation.validateAge(contact.getAge()))
                 throw new EnterValidDataException("Enter valid Age");
             contactDetails.setAge(contact.getAge());
+
+            if (uniqueCheck(contact.getPhoneNumber()))
+                throw new ContactNotFoundException("Contact already present");
+
         } catch (EnterValidDataException e) {
+            return e.getMessage();
+        }catch (ContactNotFoundException e){
             return e.getMessage();
         }
         contactList.add(contactDetails);
@@ -52,6 +62,12 @@ public class ServiceImpl implements IService {
 
     @Override
     public List<Contact> displayAll() {
+        /*try {
+            if (contactList.size()==0)
+                throw new ContactNotFoundException("No contacts present in list");
+        }catch (ContactNotFoundException e){
+            return e.getMessage();
+        }*/
         return contactList;
     }
 
@@ -64,6 +80,12 @@ public class ServiceImpl implements IService {
                 break;
             }
         }
+        /*try {
+            if (result==null)
+                throw new ContactNotFoundException("Contact not present");
+        }catch (ContactNotFoundException e){
+            return e.getMessage();
+        }*/
         return result;
     }
 
@@ -94,14 +116,14 @@ public class ServiceImpl implements IService {
                 }
             }
             if (result == null) {
-                throw new NoNotFoundException("number not found");
+                throw new ContactNotFoundException("number not found");
             }
         } catch (EnterValidDataException e) {
             return e.getMessage();
-        } catch (NoNotFoundException e) {
+        } catch (ContactNotFoundException e) {
             return e.getMessage();
         }
-        contactList.remove(contact);
+        contactList.remove(contact1);
         return "contact removed successfully.";
     }
 
@@ -117,5 +139,14 @@ public class ServiceImpl implements IService {
             }
         }
         return "enter valid details";
+    }
+
+
+    public boolean uniqueCheck(long number){
+        for (Contact contact : getContactList()){
+            if (contact.getPhoneNumber()==number)
+                return true;
+        }
+        return false;
     }
 }
