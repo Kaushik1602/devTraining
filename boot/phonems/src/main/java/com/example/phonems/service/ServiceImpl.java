@@ -14,10 +14,9 @@ import java.util.regex.Pattern;
 public class ServiceImpl implements IService {
 
     private List<Contact> contactList = new ArrayList<>();
-    Contact contact=new Contact();
+    Contact contact = new Contact();
     @Autowired
     Validation validation;
-
 
 
     @Override
@@ -75,27 +74,24 @@ public class ServiceImpl implements IService {
     @Override
     public String removeContact(long phoneNumber) {
         String string = String.valueOf(phoneNumber);
-        if (string.length() != 10 ) {
+        if (string.length() != 10) {
             return "enter correct phone number";
         }
-            for (Contact contact : contactList) {
-                if (contact.getPhoneNumber() == phoneNumber) {
-                    contactList.remove(contact);
-                    return "contact removed.";
-                }
+        for (Contact contact : contactList) {
+            if (contact.getPhoneNumber() == phoneNumber) {
+                contactList.remove(contact);
+                return "contact removed.";
             }
+        }
         return "Phone number not found.";
     }
 
     @Override
-    public String updateEmail(long phoneNumber, String email){
+    public String updateEmail(long phoneNumber, String email) {
         String string = String.valueOf(phoneNumber);
-        String regex = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(email);
         for (Contact contact : contactList) {
             if (contact.getPhoneNumber() == phoneNumber) {
-                if ((matcher.matches() || string.length() != 10)) {
+                if ((validation.validateEmail(email) && email.length() != 0 && string.length() == 10)) {
                     contact.setEmailId(email);
                     return "email updated successfully";
                 }
