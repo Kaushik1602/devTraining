@@ -16,11 +16,11 @@ public class Validation {
 
 
     public boolean validateFirstName(String firstName){
-        return firstName.length() >= 4;
+        return firstName.length() > 4;
     }
 
     public boolean validateLastName(String lastName){
-        return lastName.length() >= 4;
+        return lastName.length() > 4;
     }
 
     public boolean validateNumber(long number){
