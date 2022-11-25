@@ -16,18 +16,17 @@ public class Validation {
 
 
     public boolean validateFirstName(String firstName){
-        return firstName.length() > 4;
+        return firstName.length() > 2;
     }
 
     public boolean validateLastName(String lastName){
-        return lastName.length() > 4;
+        return lastName.length() > 2;
     }
 
     public boolean validateNumber(long number){
         String numStr = String.valueOf(number);
         List<Long> numbers = numbers();
-        System.out.println(numbers);
-        return numStr.length() == 10 && !numbers.contains(number);
+        return numStr.length() == 10;
     }
 
     public boolean validateEmail(String email){
@@ -42,7 +41,6 @@ public class Validation {
     public List<Long> numbers(){
         List<Long> numbers = new ArrayList<>();
         List<Contact> contacts = service.displayAll();
-        System.out.println(contacts);
         for (Contact c:contacts){
             numbers.add(c.getPhoneNumber());
         }

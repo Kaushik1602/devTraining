@@ -1,6 +1,7 @@
 package com.example.phonems.service;
 
 import com.example.phonems.entity.Contact;
+import com.example.phonems.exceptions.EnterValidDataException;
 import com.example.phonems.validations.Validation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,26 +22,30 @@ public class ServiceImpl implements IService {
     public String addContact(Contact contact) throws Exception{
         Contact contactDetails = new Contact();
 
-        if (!validation.validateFirstName(contact.getFirstName()))
-            return "Enter valid Firstname";
-        contactDetails.setFirstName(contact.getFirstName());
+        try {
+            if (!validation.validateFirstName(contact.getFirstName()))
+                throw new EnterValidDataException("Enter valid Name");
+            contactDetails.setFirstName(contact.getFirstName());
 
-        if (!validation.validateLastName(contact.getLastName()))
-            return "Enter valid Lastname";
-        contactDetails.setLastName(contact.getLastName());
+            if (!validation.validateLastName(contact.getLastName()))
+                throw new EnterValidDataException("Enter valid Lastname");
+            contactDetails.setLastName(contact.getLastName());
 
-        if (!validation.validateEmail(contact.getEmailId()))
-            return "Enter valid Email";
-        contactDetails.setEmailId(contact.getEmailId());
+            if (!validation.validateEmail(contact.getEmailId()))
+                throw new EnterValidDataException("Enter valid Email");
+            contactDetails.setEmailId(contact.getEmailId());
 
-        if (!validation.validateNumber(contact.getPhoneNumber()))
-//            throw new NoNotFoundException("enter valid number "+contact.getPhoneNumber());
-            return "enter valid number";
-        contactDetails.setPhoneNumber(contact.getPhoneNumber());
+            if (!validation.validateNumber(contact.getPhoneNumber()))
+                throw new EnterValidDataException("Enter valid Number "+contact.getPhoneNumber());
 
-        if (!validation.validateAge(contact.getAge()))
-            return "Enter valid Age";
-        contactDetails.setAge(contact.getAge());
+            contactDetails.setPhoneNumber(contact.getPhoneNumber());
+
+            if (!validation.validateAge(contact.getAge()))
+                throw new EnterValidDataException("Enter valid Age");
+            contactDetails.setAge(contact.getAge());
+        }catch (EnterValidDataException e){
+            return e.getMessage();
+        }
 
         contactList.add(contactDetails);
         return "Contact Added";
