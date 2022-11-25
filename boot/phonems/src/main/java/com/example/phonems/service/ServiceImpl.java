@@ -18,7 +18,7 @@ public class ServiceImpl implements IService {
 
 
     @Override
-    public String addContact(Contact contact) {
+    public String addContact(Contact contact) throws Exception{
         Contact contactDetails = new Contact();
 
         if (!validation.validateFirstName(contact.getFirstName()))
@@ -34,7 +34,8 @@ public class ServiceImpl implements IService {
         contactDetails.setEmailId(contact.getEmailId());
 
         if (!validation.validateNumber(contact.getPhoneNumber()))
-            return "Enter valid Phone Number";
+//            throw new NoNotFoundException("enter valid number "+contact.getPhoneNumber());
+            return "enter valid number";
         contactDetails.setPhoneNumber(contact.getPhoneNumber());
 
         if (!validation.validateAge(contact.getAge()))
@@ -74,10 +75,11 @@ public class ServiceImpl implements IService {
     }
 
     @Override
-    public String removeContact(long phoneNumber) {
+    public String removeContact(long phoneNumber) throws Exception {
         String string = String.valueOf(phoneNumber);
         if (string.length() != 10) {
-            return "enter correct phone number";
+            return "enter valid number";
+//            throw new EnterValidNumberException("enter valid number"+ phoneNumber);
         }
         for (Contact contact : contactList) {
             if (contact.getPhoneNumber() == phoneNumber) {

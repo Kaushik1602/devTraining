@@ -48,8 +48,14 @@ public class Contact {
         this.emailId = emailId;
     }
 
-    public String toString(){
-        return "Name: "+firstName+" "+lastName+"\nPhone No: "+phoneNumber+"\nEmail Id: "+emailId;
+    @Override
+    public String toString() {
+        return "Contact{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", phoneNumber=" + phoneNumber +
+                ", emailId='" + emailId + '\'' +
+                ", age=" + age +
+                '}';
     }
-
 }
