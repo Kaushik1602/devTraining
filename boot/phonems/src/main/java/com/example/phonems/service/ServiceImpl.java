@@ -4,16 +4,21 @@ import com.example.phonems.entity.Contact;
 import com.example.phonems.exceptions.EnterValidDataException;
 import com.example.phonems.exceptions.ContactNotFoundException;
 import com.example.phonems.validations.Validation;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Service
 public class ServiceImpl implements IService {
 
     private List<Contact> contactList = new ArrayList<>();
+
+    Logger logger = LoggerFactory.getLogger(ServiceImpl.class);
 
     public List<Contact> getContactList() {
         return contactList;
@@ -62,12 +67,12 @@ public class ServiceImpl implements IService {
 
     @Override
     public List<Contact> displayAll() {
-        /*try {
+        try {
             if (contactList.size()==0)
                 throw new ContactNotFoundException("No contacts present in list");
         }catch (ContactNotFoundException e){
-            return e.getMessage();
-        }*/
+            logger.info(e.getMessage());
+        }
         return contactList;
     }
 
@@ -80,12 +85,12 @@ public class ServiceImpl implements IService {
                 break;
             }
         }
-        /*try {
+        try {
             if (result==null)
                 throw new ContactNotFoundException("Contact not present");
         }catch (ContactNotFoundException e){
-            return e.getMessage();
-        }*/
+            logger.info(e.getMessage());
+        }
         return result;
     }
 
@@ -131,14 +136,15 @@ public class ServiceImpl implements IService {
     public String updateEmail(long phoneNumber, String email) {
         String string = String.valueOf(phoneNumber);
         try {
+            if (string.length()!=10)
+                throw new EnterValidDataException("Enter valid number");
             for (Contact contact : contactList) {
                 if (contact.getPhoneNumber() == phoneNumber) {
-                    if ((validation.validateEmail(email) && email.length() != 0 && string.length() == 10)) {
+                    if (validation.validateEmail(email)) {
                         contact.setEmailId(email);
-                        return "email updated successfully";
-                    } else {
-                        throw new EnterValidDataException("enter valid details..");
+                        return "Email updated successfully";
                     }
+                    throw new EnterValidDataException("Enter valid Email");
                 }
             }
             throw new ContactNotFoundException("Contact not found.");
