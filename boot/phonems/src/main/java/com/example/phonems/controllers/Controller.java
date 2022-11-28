@@ -16,7 +16,7 @@ public class Controller {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/customers/add")
-        private String add(@RequestBody Contact contact) throws Exception {
+    private String add(@RequestBody Contact contact) throws Exception {
         return service.addContact(contact);
     }
 

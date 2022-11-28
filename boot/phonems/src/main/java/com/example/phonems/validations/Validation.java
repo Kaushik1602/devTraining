@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 @Component
 public class Validation {
 
-    ServiceImpl service = new ServiceImpl();
+    IService service = new ServiceImpl();
 
 
     public boolean validateFirstName(String firstName){
@@ -25,6 +25,7 @@ public class Validation {
 
     public boolean validateNumber(long number){
         String numStr = String.valueOf(number);
+        List<Long> numbers = numbers();
         return numStr.length() == 10;
     }
 
@@ -37,6 +38,12 @@ public class Validation {
         return age>0;
     }
 
-
-
+    public List<Long> numbers(){
+        List<Long> numbers = new ArrayList<>();
+        List<Contact> contacts = service.displayAll();
+        for (Contact c:contacts){
+            numbers.add(c.getPhoneNumber());
+        }
+        return numbers;
+    }
 }

@@ -53,7 +53,7 @@ public class ServiceImpl implements IService {
 
         } catch (EnterValidDataException e) {
             return e.getMessage();
-        }catch (ContactNotFoundException e){
+        } catch (ContactNotFoundException e) {
             return e.getMessage();
         }
         contactList.add(contactDetails);
@@ -104,14 +104,14 @@ public class ServiceImpl implements IService {
     public String removeContact(long phoneNumber) throws Exception {
         String string = String.valueOf(phoneNumber);
         String result = null;
-        Contact contact1=new Contact();
+        Contact contact1 = new Contact();
         try {
             if (string.length() != 10) {
                 throw new EnterValidDataException("enter valid phone number");
             }
             for (Contact contact : contactList) {
                 if (contact.getPhoneNumber() == phoneNumber) {
-                    contact1=contact;
+                    contact1 = contact;
                     result = "found..";
                 }
             }
@@ -130,21 +130,29 @@ public class ServiceImpl implements IService {
     @Override
     public String updateEmail(long phoneNumber, String email) {
         String string = String.valueOf(phoneNumber);
-        for (Contact contact : contactList) {
-            if (contact.getPhoneNumber() == phoneNumber) {
-                if ((validation.validateEmail(email) && email.length() != 0 && string.length() == 10)) {
-                    contact.setEmailId(email);
-                    return "email updated successfully";
+        try {
+            for (Contact contact : contactList) {
+                if (contact.getPhoneNumber() == phoneNumber) {
+                    if ((validation.validateEmail(email) && email.length() != 0 && string.length() == 10)) {
+                        contact.setEmailId(email);
+                        return "email updated successfully";
+                    } else {
+                        throw new EnterValidDataException("enter valid details..");
+                    }
                 }
             }
+            throw new ContactNotFoundException("Contact not found.");
+        } catch (EnterValidDataException e) {
+            return e.getMessage();
+        } catch (ContactNotFoundException e) {
+            return e.getMessage();
         }
-        return "enter valid details";
+
     }
 
-
-    public boolean uniqueCheck(long number){
-        for (Contact contact : getContactList()){
-            if (contact.getPhoneNumber()==number)
+    public boolean uniqueCheck(long number) {
+        for (Contact contact : getContactList()) {
+            if (contact.getPhoneNumber() == number)
                 return true;
         }
         return false;
