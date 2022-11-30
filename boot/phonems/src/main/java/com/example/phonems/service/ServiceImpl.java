@@ -1,7 +1,6 @@
 package com.example.phonems.service;
 
 import com.example.phonems.entity.Contact;
-import com.example.phonems.exceptions.ContactAlreadyPresentException;
 import com.example.phonems.exceptions.EnterValidDataException;
 import com.example.phonems.exceptions.ContactNotFoundException;
 import com.example.phonems.validations.Validation;
@@ -31,11 +30,10 @@ public class ServiceImpl implements IService {
 
 
     @Override
-    public Contact addContact(Contact contact) {
+    public String addContact(Contact contact) {
         Contact contactDetails = new Contact();
-
         if (uniqueCheck(contact.getPhoneNumber()))
-            throw new ContactAlreadyPresentException("Contact already present");
+            throw new ContactNotFoundException("Contact already present");
 
         if (!validation.validateFirstName(contact.getFirstName()))
             throw new EnterValidDataException("Enter valid Name");
@@ -49,9 +47,8 @@ public class ServiceImpl implements IService {
             throw new EnterValidDataException("Enter valid Email");
         contactDetails.setEmailId(contact.getEmailId());
 
-        if (!validation.validateNumber(contact.getPhoneNumber())){
-            throw new EnterValidDataException("Enter valid no.");
-        }
+        if (!validation.validateNumber(contact.getPhoneNumber()))
+            throw new EnterValidDataException("Enter valid Number ");
         contactDetails.setPhoneNumber(contact.getPhoneNumber());
 
         if (!validation.validateAge(contact.getAge()))
@@ -59,18 +56,15 @@ public class ServiceImpl implements IService {
         contactDetails.setAge(contact.getAge());
 
         contactList.add(contactDetails);
-        logger.info("Contact Added");
-        return contactDetails;
+        logger.info("Contact added.");
+        return "Contact added.";
     }
 
     @Override
     public List<Contact> displayAll() {
-
-        if (contactList.size() == 0){
-            logger.warn("List is empty");
+        if (contactList.size() == 0)
             throw new ContactNotFoundException("No contacts present in list");
-        }
-        logger.info("List Displayed");
+        logger.info("Contact list displayed.");
         return contactList;
     }
 
@@ -97,7 +91,7 @@ public class ServiceImpl implements IService {
                 result.add(contact);
             }
         }
-        if (result.size()==0){
+        if (result.size() == 0) {
             throw new ContactNotFoundException("No contacts found");
         }
         logger.info("Found Contact");
@@ -105,11 +99,10 @@ public class ServiceImpl implements IService {
     }
 
     @Override
-    public Contact removeContact(long phoneNumber) {
+    public String removeContact(long phoneNumber) throws Exception {
         String string = String.valueOf(phoneNumber);
         String result = null;
         Contact contact1 = new Contact();
-
         if (string.length() != 10) {
             throw new EnterValidDataException("enter valid phone number");
         }
@@ -124,29 +117,26 @@ public class ServiceImpl implements IService {
         }
 
         contactList.remove(contact1);
-        logger.info("Contact removed");
-        return contact1;
+        logger.info("contact deleted.");
+        return phoneNumber+" :contact deleted.";
     }
 
     @Override
     public Contact updateEmail(long phoneNumber, String email) {
         String string = String.valueOf(phoneNumber);
-
         if (string.length() != 10)
             throw new EnterValidDataException("Enter valid number");
         for (Contact contact : contactList) {
             if (contact.getPhoneNumber() == phoneNumber) {
                 if (validation.validateEmail(email)) {
                     contact.setEmailId(email);
-                    logger.info("Email updated");
+                    logger.info("Email updated successfully");
                     return contact;
                 }
                 throw new EnterValidDataException("Enter valid Email");
             }
         }
         throw new ContactNotFoundException("Contact not found.");
-
-
     }
 
     public boolean uniqueCheck(long number) {

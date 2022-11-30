@@ -15,37 +15,37 @@ public class Controller {
     IService service;
 
     @ResponseStatus(HttpStatus.CREATED)
-    @PostMapping("/customers/add")
-    private Contact add(@RequestBody Contact contact) throws Exception {
+    @PostMapping("/contacts/add")
+    private String add(@RequestBody Contact contact) throws Exception {
         return service.addContact(contact);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping("/customers/view")
+    @GetMapping("/contacts/view")
     private List<Contact> viewAll() {
         return service.displayAll();
     }
 
     @ResponseStatus(HttpStatus.FOUND)
-    @GetMapping("/customers/findByNumber/{phoneNumber}")
+    @GetMapping("/contacts/findByNumber/{phoneNumber}")
     private Contact findByNumber(@PathVariable long phoneNumber) {
         return service.searchContactByGivenPhoneNo(phoneNumber);
     }
 
     @ResponseStatus(HttpStatus.FOUND)
-    @GetMapping("/customers/findByName/{firstName}")
+    @GetMapping("/contacts/findByName/{firstName}")
     private List<Contact> findByFirstName(@PathVariable String firstName) {
         return service.searchContactByFirstName(firstName);
     }
 
     @ResponseStatus(HttpStatus.ACCEPTED)
-    @DeleteMapping("/customers/delete/{phoneNumber}")
-    private Contact deleteByNumber(@PathVariable long phoneNumber) throws Exception {
+    @DeleteMapping("/contacts/delete/{phoneNumber}")
+    private String deleteByNumber(@PathVariable long phoneNumber) throws Exception {
         return service.removeContact(phoneNumber);
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/customers/update/{phoneNumber}")
+    @PutMapping("/contacts/update/{phoneNumber}")
     private Contact updateEmail(@PathVariable long phoneNumber, @RequestBody String emailId) {
         return service.updateEmail(phoneNumber, emailId);
     }

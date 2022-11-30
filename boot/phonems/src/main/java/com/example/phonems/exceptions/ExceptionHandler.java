@@ -10,7 +10,7 @@ public class ExceptionHandler {
 
     @org.springframework.web.bind.annotation.ExceptionHandler(value = EnterValidDataException.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
-    public @ResponseBody ErrorResponse EnterValidDataException(EnterValidDataException e){
+    public @ResponseBody ErrorResponse EnterValidDataException(EnterValidDataException e) {
         ErrorResponse response = new ErrorResponse();
         response.setResponseCode(HttpStatus.UNPROCESSABLE_ENTITY.value());
         response.setMsg(e.getMessage());
@@ -19,7 +19,7 @@ public class ExceptionHandler {
 
     @org.springframework.web.bind.annotation.ExceptionHandler(value = ContactNotFoundException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public @ResponseBody ErrorResponse ContactNotFoundException(ContactNotFoundException e){
+    public @ResponseBody ErrorResponse ContactNotFoundException(ContactNotFoundException e) {
         ErrorResponse response = new ErrorResponse();
         response.setResponseCode(HttpStatus.BAD_REQUEST.value());
         response.setMsg(e.getMessage());
@@ -28,7 +28,7 @@ public class ExceptionHandler {
 
     @org.springframework.web.bind.annotation.ExceptionHandler(value = ContactAlreadyPresentException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public @ResponseBody ErrorResponse ContactAlreadyPresentException(ContactAlreadyPresentException e){
+    public @ResponseBody ErrorResponse ContactAlreadyPresentException(ContactAlreadyPresentException e) {
         ErrorResponse response = new ErrorResponse();
         response.setResponseCode(HttpStatus.BAD_REQUEST.value());
         response.setMsg(e.getMessage());

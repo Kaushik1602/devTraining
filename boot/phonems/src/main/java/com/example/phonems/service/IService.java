@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IService {
 
-    Contact addContact(Contact contact);
+    String addContact(Contact contact);
 
     List<Contact> displayAll();
 
@@ -14,7 +14,7 @@ public interface IService {
 
     List<Contact> searchContactByFirstName(String firstName);
 
-    Contact removeContact(long phoneNumber) throws Exception;
+    String removeContact(long phoneNumber) throws Exception;
 
     Contact updateEmail(long number, String email);
 
