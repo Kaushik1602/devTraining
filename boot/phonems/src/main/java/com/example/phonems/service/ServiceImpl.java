@@ -1,6 +1,7 @@
 package com.example.phonems.service;
 
 import com.example.phonems.entity.Contact;
+import com.example.phonems.exceptions.ContactAlreadyPresentException;
 import com.example.phonems.exceptions.EnterValidDataException;
 import com.example.phonems.exceptions.ContactNotFoundException;
 import com.example.phonems.validations.Validation;
@@ -32,27 +33,21 @@ public class ServiceImpl implements IService {
     @Override
     public String addContact(Contact contact) {
         Contact contactDetails = new Contact();
-        if (uniqueCheck(contact.getPhoneNumber()))
-            throw new ContactNotFoundException("Contact already present");
+        uniqueCheck(contact.getPhoneNumber());
 
-        if (!validation.validateFirstName(contact.getFirstName()))
-            throw new EnterValidDataException("Enter valid Name");
+        validation.validateFirstName(contact.getFirstName());
         contactDetails.setFirstName(contact.getFirstName());
 
-        if (!validation.validateLastName(contact.getLastName()))
-            throw new EnterValidDataException("Enter valid Lastname");
+        validation.validateLastName(contact.getLastName());
         contactDetails.setLastName(contact.getLastName());
 
-        if (!validation.validateEmail(contact.getEmailId()))
-            throw new EnterValidDataException("Enter valid Email");
+        validation.validateEmail(contact.getEmailId());
         contactDetails.setEmailId(contact.getEmailId());
 
-        if (!validation.validateNumber(contact.getPhoneNumber()))
-            throw new EnterValidDataException("Enter valid Number ");
+        validation.validateNumber(contact.getPhoneNumber());
         contactDetails.setPhoneNumber(contact.getPhoneNumber());
 
-        if (!validation.validateAge(contact.getAge()))
-            throw new EnterValidDataException("Enter valid Age");
+        validation.validateAge(contact.getAge());
         contactDetails.setAge(contact.getAge());
 
         contactList.add(contactDetails);
@@ -62,16 +57,17 @@ public class ServiceImpl implements IService {
 
     @Override
     public List<Contact> displayAll() {
-        if (contactList.size() == 0)
+        if (contactList.size() == 0){
+            logger.warn("List is Empty");
             throw new ContactNotFoundException("No contacts present in list");
+        }
         logger.info("Contact list displayed.");
         return contactList;
     }
 
     @Override
     public Contact searchContactByGivenPhoneNo(long number) {
-        if (!validation.validateNumber(number))
-            throw new EnterValidDataException("Enter valid number");
+        validation.validateNumber(number);
         for (Contact contact : contactList) {
             if (contact.getPhoneNumber() == number) {
                 logger.info("Found Contact");
@@ -84,8 +80,7 @@ public class ServiceImpl implements IService {
     @Override
     public List<Contact> searchContactByFirstName(String firstName) {
         List<Contact> result = new ArrayList<>();
-        if (!validation.validateFirstName(firstName))
-            throw new EnterValidDataException("Enter valid name");
+        validation.validateFirstName(firstName);
         for (Contact contact : contactList) {
             if (contact.getFirstName().equals(firstName)) {
                 result.add(contact);
@@ -99,20 +94,15 @@ public class ServiceImpl implements IService {
     }
 
     @Override
-    public String removeContact(long phoneNumber) throws Exception {
-        String string = String.valueOf(phoneNumber);
-        String result = null;
-        Contact contact1 = new Contact();
-        if (string.length() != 10) {
-            throw new EnterValidDataException("enter valid phone number");
-        }
+    public String removeContact(long phoneNumber) {
+        Contact contact1 = null;
+        validation.validateNumber(phoneNumber);
         for (Contact contact : contactList) {
             if (contact.getPhoneNumber() == phoneNumber) {
                 contact1 = contact;
-                result = "found..";
             }
         }
-        if (result == null) {
+        if (contact1 == null) {
             throw new ContactNotFoundException("number not found");
         }
 
@@ -123,27 +113,22 @@ public class ServiceImpl implements IService {
 
     @Override
     public Contact updateEmail(long phoneNumber, String email) {
-        String string = String.valueOf(phoneNumber);
-        if (string.length() != 10)
-            throw new EnterValidDataException("Enter valid number");
+        validation.validateNumber(phoneNumber);
         for (Contact contact : contactList) {
             if (contact.getPhoneNumber() == phoneNumber) {
-                if (validation.validateEmail(email)) {
-                    contact.setEmailId(email);
-                    logger.info("Email updated successfully");
-                    return contact;
-                }
-                throw new EnterValidDataException("Enter valid Email");
+                validation.validateEmail(email);
+                contact.setEmailId(email);
+                logger.info("Email updated successfully");
+                return contact;
             }
         }
         throw new ContactNotFoundException("Contact not found.");
     }
 
-    public boolean uniqueCheck(long number) {
+    public void uniqueCheck(long number) {
         for (Contact contact : getContactList()) {
             if (contact.getPhoneNumber() == number)
-                return true;
+                throw new ContactAlreadyPresentException("Contact Already Exists");
         }
-        return false;
     }
 }
