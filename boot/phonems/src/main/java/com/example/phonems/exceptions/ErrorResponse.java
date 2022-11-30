@@ -23,6 +23,6 @@ public class ErrorResponse {
 
     @Override
     public String toString() {
-        return "Error: "+ responseCode +"\nMessage: "+msg;
+        return "HttpResponceCode: "+ responseCode +"\nMessage: "+msg;
     }
 }
