@@ -1,6 +1,7 @@
 package com.example.phonems.service;
 
 import com.example.phonems.entity.Contact;
+import com.example.phonems.exceptions.ContactAlreadyPresentException;
 import com.example.phonems.exceptions.EnterValidDataException;
 import com.example.phonems.exceptions.ContactNotFoundException;
 import com.example.phonems.validations.Validation;
@@ -30,129 +31,121 @@ public class ServiceImpl implements IService {
 
 
     @Override
-    public String addContact(Contact contact) throws Exception {
+    public Contact addContact(Contact contact) {
         Contact contactDetails = new Contact();
-        try {
-            if (!validation.validateFirstName(contact.getFirstName()))
-                throw new EnterValidDataException("Enter valid Name");
-            contactDetails.setFirstName(contact.getFirstName());
 
-            if (!validation.validateLastName(contact.getLastName()))
-                throw new EnterValidDataException("Enter valid Lastname");
-            contactDetails.setLastName(contact.getLastName());
+        if (uniqueCheck(contact.getPhoneNumber()))
+            throw new ContactAlreadyPresentException("Contact already present");
 
-            if (!validation.validateEmail(contact.getEmailId()))
-                throw new EnterValidDataException("Enter valid Email");
-            contactDetails.setEmailId(contact.getEmailId());
+        if (!validation.validateFirstName(contact.getFirstName()))
+            throw new EnterValidDataException("Enter valid Name");
+        contactDetails.setFirstName(contact.getFirstName());
 
-            if (!validation.validateNumber(contact.getPhoneNumber()))
-                throw new EnterValidDataException("Enter valid Number " + contact.getPhoneNumber());
-            contactDetails.setPhoneNumber(contact.getPhoneNumber());
+        if (!validation.validateLastName(contact.getLastName()))
+            throw new EnterValidDataException("Enter valid Lastname");
+        contactDetails.setLastName(contact.getLastName());
 
-            if (!validation.validateAge(contact.getAge()))
-                throw new EnterValidDataException("Enter valid Age");
-            contactDetails.setAge(contact.getAge());
+        if (!validation.validateEmail(contact.getEmailId()))
+            throw new EnterValidDataException("Enter valid Email");
+        contactDetails.setEmailId(contact.getEmailId());
 
-            if (uniqueCheck(contact.getPhoneNumber()))
-                throw new ContactNotFoundException("Contact already present");
-
-        } catch (EnterValidDataException e) {
-            return e.getMessage();
-        } catch (ContactNotFoundException e) {
-            return e.getMessage();
+        if (!validation.validateNumber(contact.getPhoneNumber())){
+            throw new EnterValidDataException("Enter valid no.");
         }
+        contactDetails.setPhoneNumber(contact.getPhoneNumber());
+
+        if (!validation.validateAge(contact.getAge()))
+            throw new EnterValidDataException("Enter valid Age");
+        contactDetails.setAge(contact.getAge());
+
         contactList.add(contactDetails);
-        return "Contact Added";
+        logger.info("Contact Added");
+        return contactDetails;
     }
 
     @Override
     public List<Contact> displayAll() {
-        try {
-            if (contactList.size()==0)
-                throw new ContactNotFoundException("No contacts present in list");
-        }catch (ContactNotFoundException e){
-            logger.info(e.getMessage());
+
+        if (contactList.size() == 0){
+            logger.warn("List is empty");
+            throw new ContactNotFoundException("No contacts present in list");
         }
+        logger.info("List Displayed");
         return contactList;
     }
 
     @Override
     public Contact searchContactByGivenPhoneNo(long number) {
-        Contact result = new Contact();
+        if (!validation.validateNumber(number))
+            throw new EnterValidDataException("Enter valid number");
         for (Contact contact : contactList) {
             if (contact.getPhoneNumber() == number) {
-                result = contact;
-                break;
+                logger.info("Found Contact");
+                return contact;
             }
         }
-        try {
-            if (result==null)
-                throw new ContactNotFoundException("Contact not present");
-        }catch (ContactNotFoundException e){
-            logger.info(e.getMessage());
-        }
-        return result;
+        throw new ContactNotFoundException("Contact not present");
     }
 
     @Override
     public List<Contact> searchContactByFirstName(String firstName) {
         List<Contact> result = new ArrayList<>();
+        if (!validation.validateFirstName(firstName))
+            throw new EnterValidDataException("Enter valid name");
         for (Contact contact : contactList) {
             if (contact.getFirstName().equals(firstName)) {
                 result.add(contact);
             }
         }
+        if (result.size()==0){
+            throw new ContactNotFoundException("No contacts found");
+        }
+        logger.info("Found Contact");
         return result;
     }
 
     @Override
-    public String removeContact(long phoneNumber) throws Exception {
+    public Contact removeContact(long phoneNumber) {
         String string = String.valueOf(phoneNumber);
         String result = null;
         Contact contact1 = new Contact();
-        try {
-            if (string.length() != 10) {
-                throw new EnterValidDataException("enter valid phone number");
-            }
-            for (Contact contact : contactList) {
-                if (contact.getPhoneNumber() == phoneNumber) {
-                    contact1 = contact;
-                    result = "found..";
-                }
-            }
-            if (result == null) {
-                throw new ContactNotFoundException("number not found");
-            }
-        } catch (EnterValidDataException e) {
-            return e.getMessage();
-        } catch (ContactNotFoundException e) {
-            return e.getMessage();
+
+        if (string.length() != 10) {
+            throw new EnterValidDataException("enter valid phone number");
         }
+        for (Contact contact : contactList) {
+            if (contact.getPhoneNumber() == phoneNumber) {
+                contact1 = contact;
+                result = "found..";
+            }
+        }
+        if (result == null) {
+            throw new ContactNotFoundException("number not found");
+        }
+
         contactList.remove(contact1);
-        return "contact removed successfully.";
+        logger.info("Contact removed");
+        return contact1;
     }
 
     @Override
-    public String updateEmail(long phoneNumber, String email) {
+    public Contact updateEmail(long phoneNumber, String email) {
         String string = String.valueOf(phoneNumber);
-        try {
-            if (string.length()!=10)
-                throw new EnterValidDataException("Enter valid number");
-            for (Contact contact : contactList) {
-                if (contact.getPhoneNumber() == phoneNumber) {
-                    if (validation.validateEmail(email)) {
-                        contact.setEmailId(email);
-                        return "Email updated successfully";
-                    }
-                    throw new EnterValidDataException("Enter valid Email");
+
+        if (string.length() != 10)
+            throw new EnterValidDataException("Enter valid number");
+        for (Contact contact : contactList) {
+            if (contact.getPhoneNumber() == phoneNumber) {
+                if (validation.validateEmail(email)) {
+                    contact.setEmailId(email);
+                    logger.info("Email updated");
+                    return contact;
                 }
+                throw new EnterValidDataException("Enter valid Email");
             }
-            throw new ContactNotFoundException("Contact not found.");
-        } catch (EnterValidDataException e) {
-            return e.getMessage();
-        } catch (ContactNotFoundException e) {
-            return e.getMessage();
         }
+        throw new ContactNotFoundException("Contact not found.");
+
 
     }
 

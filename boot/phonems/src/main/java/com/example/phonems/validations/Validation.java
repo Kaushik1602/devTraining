@@ -1,12 +1,9 @@
 package com.example.phonems.validations;
 
-import com.example.phonems.entity.Contact;
 import com.example.phonems.service.IService;
 import com.example.phonems.service.ServiceImpl;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Pattern;
 
 @Component
@@ -25,7 +22,6 @@ public class Validation {
 
     public boolean validateNumber(long number){
         String numStr = String.valueOf(number);
-        List<Long> numbers = numbers();
         return numStr.length() == 10;
     }
 
@@ -38,12 +34,5 @@ public class Validation {
         return age>0;
     }
 
-    public List<Long> numbers(){
-        List<Long> numbers = new ArrayList<>();
-        List<Contact> contacts = service.displayAll();
-        for (Contact c:contacts){
-            numbers.add(c.getPhoneNumber());
-        }
-        return numbers;
-    }
+
 }

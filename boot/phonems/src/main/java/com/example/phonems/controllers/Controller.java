@@ -16,7 +16,7 @@ public class Controller {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/customers/add")
-    private String add(@RequestBody Contact contact) throws Exception {
+    private Contact add(@RequestBody Contact contact) throws Exception {
         return service.addContact(contact);
     }
 
@@ -40,13 +40,13 @@ public class Controller {
 
     @ResponseStatus(HttpStatus.ACCEPTED)
     @DeleteMapping("/customers/delete/{phoneNumber}")
-    private String deleteByNumber(@PathVariable long phoneNumber) throws Exception {
+    private Contact deleteByNumber(@PathVariable long phoneNumber) throws Exception {
         return service.removeContact(phoneNumber);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/customers/update/{phoneNumber}")
-    private String updateEmail(@PathVariable long phoneNumber, @RequestBody String emailId) {
+    private Contact updateEmail(@PathVariable long phoneNumber, @RequestBody String emailId) {
         return service.updateEmail(phoneNumber, emailId);
     }
 
