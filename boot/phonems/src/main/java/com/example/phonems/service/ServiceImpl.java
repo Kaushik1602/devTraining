@@ -2,7 +2,6 @@ package com.example.phonems.service;
 
 import com.example.phonems.entity.Contact;
 import com.example.phonems.exceptions.ContactAlreadyPresentException;
-import com.example.phonems.exceptions.EnterValidDataException;
 import com.example.phonems.exceptions.ContactNotFoundException;
 import com.example.phonems.validations.Validation;
 import org.slf4j.Logger;
@@ -31,28 +30,23 @@ public class ServiceImpl implements IService {
 
 
     @Override
-    public String addContact(Contact contact) {
+    public Contact addContact(Contact contact) {
         Contact contactDetails = new Contact();
         uniqueCheck(contact.getPhoneNumber());
 
-        validation.validateFirstName(contact.getFirstName());
-        contactDetails.setFirstName(contact.getFirstName());
+        contactDetails.setFirstName(validation.validateFirstName(contact.getFirstName()));
 
-        validation.validateLastName(contact.getLastName());
-        contactDetails.setLastName(contact.getLastName());
+        contactDetails.setLastName(validation.validateLastName(contact.getLastName()));
 
-        validation.validateEmail(contact.getEmailId());
-        contactDetails.setEmailId(contact.getEmailId());
+        contactDetails.setEmailId(validation.validateEmail(contact.getEmailId()));
 
-        validation.validateNumber(contact.getPhoneNumber());
-        contactDetails.setPhoneNumber(contact.getPhoneNumber());
+        contactDetails.setPhoneNumber(validation.validateNumber(contact.getPhoneNumber()));
 
-        validation.validateAge(contact.getAge());
-        contactDetails.setAge(contact.getAge());
+        contactDetails.setAge(validation.validateAge(contact.getAge()));
 
         contactList.add(contactDetails);
         logger.info("Contact added.");
-        return "Contact added.";
+        return contactDetails;
     }
 
     @Override
@@ -74,7 +68,7 @@ public class ServiceImpl implements IService {
                 return contact;
             }
         }
-        throw new ContactNotFoundException("Contact not present");
+        throw new ContactNotFoundException("Contact not present"+number);
     }
 
     @Override

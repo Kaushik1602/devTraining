@@ -10,32 +10,36 @@ import java.util.regex.Pattern;
 @Component
 public class Validation {
 
-    public void validateFirstName(String firstName) {
+    public String validateFirstName(String firstName) {
         if (firstName.length() < 3)
             throw new EnterValidDataException("Enter valid First Name");
+        return firstName;
     }
 
-    public void validateLastName(String lastName) {
+    public String validateLastName(String lastName) {
         if (lastName.length() < 3)
             throw new EnterValidDataException("Enter valid Last name");
+        return lastName;
     }
 
-    public void validateNumber(long number) {
+    public long validateNumber(long number) {
         String numStr = String.valueOf(number);
         if (numStr.length() != 10)
             throw new EnterValidDataException("Enter valid number");
-
+        return number;
     }
 
-    public void validateEmail(String email) {
+    public String validateEmail(String email) {
         Pattern validation = Pattern.compile("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
         if (!(validation.matcher(email).matches() && email.length() != 0))
             throw new EnterValidDataException("Enter valid Email");
+        return email;
     }
 
-    public void validateAge(int age) {
+    public int validateAge(int age) {
         if(age < 1)
             throw new EnterValidDataException("Enter valid Age");
+        return age;
     }
 
 
