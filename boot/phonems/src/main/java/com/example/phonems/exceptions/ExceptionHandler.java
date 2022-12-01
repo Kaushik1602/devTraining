@@ -18,7 +18,7 @@ public class ExceptionHandler {
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler(value = ContactNotFoundException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public @ResponseBody ErrorResponse ContactNotFoundException(ContactNotFoundException e) {
         ErrorResponse response = new ErrorResponse();
         response.setResponseCode(HttpStatus.BAD_REQUEST.value());
@@ -27,7 +27,7 @@ public class ExceptionHandler {
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler(value = ContactAlreadyPresentException.class)
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public @ResponseBody ErrorResponse ContactAlreadyPresentException(ContactAlreadyPresentException e) {
         ErrorResponse response = new ErrorResponse();
         response.setResponseCode(HttpStatus.BAD_REQUEST.value());
