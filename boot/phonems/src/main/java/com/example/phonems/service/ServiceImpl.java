@@ -31,19 +31,14 @@ public class ServiceImpl implements IService {
 
     @Override
     public Contact addContact(Contact contact) {
+        logger.info("method started.");
         Contact contactDetails = new Contact();
         uniqueCheck(contact.getPhoneNumber());
-
         contactDetails.setFirstName(validation.validateFirstName(contact.getFirstName()));
-
         contactDetails.setLastName(validation.validateLastName(contact.getLastName()));
-
         contactDetails.setEmailId(validation.validateEmail(contact.getEmailId()));
-
         contactDetails.setPhoneNumber(validation.validateNumber(contact.getPhoneNumber()));
-
         contactDetails.setAge(validation.validateAge(contact.getAge()));
-
         contactList.add(contactDetails);
         logger.info("Contact added.");
         return contactDetails;
@@ -51,7 +46,8 @@ public class ServiceImpl implements IService {
 
     @Override
     public List<Contact> displayAll() {
-        if (contactList.size() == 0){
+        logger.info("method started.");
+        if (contactList.size() == 0) {
             logger.warn("List is Empty");
             throw new ContactNotFoundException("No contacts present in list");
         }
@@ -61,6 +57,7 @@ public class ServiceImpl implements IService {
 
     @Override
     public Contact searchContactByGivenPhoneNo(long number) {
+        logger.info("method started.");
         validation.validateNumber(number);
         for (Contact contact : contactList) {
             if (contact.getPhoneNumber() == number) {
@@ -68,11 +65,12 @@ public class ServiceImpl implements IService {
                 return contact;
             }
         }
-        throw new ContactNotFoundException("Contact not present"+number);
+        throw new ContactNotFoundException("Contact not present" + number);
     }
 
     @Override
     public List<Contact> searchContactByFirstName(String firstName) {
+        logger.info("method started.");
         List<Contact> result = new ArrayList<>();
         validation.validateFirstName(firstName);
         for (Contact contact : contactList) {
@@ -89,6 +87,7 @@ public class ServiceImpl implements IService {
 
     @Override
     public String removeContact(long phoneNumber) {
+        logger.info("method started.");
         Contact contact1 = null;
         validation.validateNumber(phoneNumber);
         for (Contact contact : contactList) {
@@ -102,18 +101,23 @@ public class ServiceImpl implements IService {
 
         contactList.remove(contact1);
         logger.info("contact deleted.");
-        return phoneNumber+" :contact deleted.";
+        return contact1 + " :contact deleted.";
     }
 
     @Override
-    public Contact updateEmail(long phoneNumber, String email) {
+    public Contact updateEmail(long phoneNumber, Contact contact) {
+        logger.info("method started.");
         validation.validateNumber(phoneNumber);
-        for (Contact contact : contactList) {
-            if (contact.getPhoneNumber() == phoneNumber) {
-                validation.validateEmail(email);
-                contact.setEmailId(email);
+        for (Contact contact1 : contactList) {
+            if (contact1.getPhoneNumber() == phoneNumber) {
+                contact1.setPhoneNumber(validation.validateNumber(contact.getPhoneNumber()));
+                contact1.setFirstName(validation.validateFirstName(contact.getFirstName()));
+                contact1.setLastName(validation.validateLastName(contact.getLastName()));
+                contact1.setAge(validation.validateAge(contact.getAge()));
+                contact1.setEmailId(validation.validateEmail(contact.getEmailId()));
+                contactList.add(contact1);
                 logger.info("Email updated successfully");
-                return contact;
+                return contact1;
             }
         }
         throw new ContactNotFoundException("Contact not found.");

@@ -16,6 +16,6 @@ public interface IService {
 
     String removeContact(long phoneNumber);
 
-    Contact updateEmail(long number, String email);
+    Contact updateEmail(long number,Contact contact);
 
 }
