@@ -40,7 +40,7 @@ public class Validation {
     }
 
     public String validateEmail(String email) {
-        Pattern validation = Pattern.compile("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+        Pattern validation = Pattern.compile("^[\\w-\\.]+@([a-zA-Z]+\\.)+[a-zA-Z]{2,4}$");
         if (email == null || !(validation.matcher(email).matches() && email.length() != 0)) {
             logger.warn("Email format invalid");
             throw new EnterValidDataException("Enter valid Email");
