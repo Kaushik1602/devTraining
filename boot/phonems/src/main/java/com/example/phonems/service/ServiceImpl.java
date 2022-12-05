@@ -3,6 +3,7 @@ package com.example.phonems.service;
 import com.example.phonems.entity.Contact;
 import com.example.phonems.exceptions.ContactAlreadyPresentException;
 import com.example.phonems.exceptions.ContactNotFoundException;
+import com.example.phonems.exceptions.EnterValidDataException;
 import com.example.phonems.validations.Validation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -33,12 +34,18 @@ public class ServiceImpl implements IService {
     public Contact addContact(Contact contact) {
         logger.info("method started.");
         Contact contactDetails = new Contact();
-        uniqueCheck(contact.getPhoneNumber());
+        try {
+            uniqueCheck(contact.getPhoneNumber());
+            contactDetails.setPhoneNumber(validation.validateNumber(contact.getPhoneNumber()));
+            contactDetails.setAge(validation.validateAge(contact.getAge()));
+        } catch (NullPointerException e) {
+            throw new EnterValidDataException(e.getMessage());
+        }
+
         contactDetails.setFirstName(validation.validateFirstName(contact.getFirstName()));
         contactDetails.setLastName(validation.validateLastName(contact.getLastName()));
         contactDetails.setEmailId(validation.validateEmail(contact.getEmailId()));
-        contactDetails.setPhoneNumber(validation.validateNumber(contact.getPhoneNumber()));
-        contactDetails.setAge(validation.validateAge(contact.getAge()));
+
         contactList.add(contactDetails);
         logger.info("Contact added.");
         return contactDetails;

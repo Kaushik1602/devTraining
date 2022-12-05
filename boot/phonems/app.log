@@ -1,73 +1,21 @@
-2022-12-01 12:13:51.714  INFO 23976 --- [main] com.example.phonems.PhonemsApplication   : Starting PhonemsApplication using Java 19.0.1 on LIN51018450 with PID 23976 (C:\Users\MGANPATI\IdeaProjects\devTraining\boot\phonems\target\classes started by mganpati in C:\Users\MGANPATI\IdeaProjects\devTraining\boot\phonems)
-2022-12-01 12:13:51.724  INFO 23976 --- [main] com.example.phonems.PhonemsApplication   : No active profile set, falling back to 1 default profile: "default"
-2022-12-01 12:13:53.087  INFO 23976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2022-12-01 12:13:53.103  INFO 23976 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-12-01 12:13:53.103  INFO 23976 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-01 12:13:53.222  INFO 23976 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-12-01 12:13:53.222  INFO 23976 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1419 ms
-2022-12-01 12:13:53.656  INFO 23976 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2022-12-01 12:13:53.664  INFO 23976 --- [main] com.example.phonems.PhonemsApplication   : Started PhonemsApplication in 2.632 seconds (JVM running for 3.212)
-2022-12-01 12:15:07.503  INFO 23976 --- [http-nio-8082-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-01 12:15:07.503  INFO 23976 --- [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-12-01 12:15:07.503  INFO 23976 --- [http-nio-8082-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-12-01 12:15:07.636  INFO 23976 --- [http-nio-8082-exec-3] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-01 12:15:32.918  INFO 23976 --- [http-nio-8082-exec-2] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-01 12:17:35.074  INFO 23976 --- [http-nio-8082-exec-8] com.example.phonems.service.ServiceImpl  : Email updated successfully
-2022-12-01 12:20:42.008  INFO 24676 --- [main] com.example.phonems.PhonemsApplication   : Starting PhonemsApplication using Java 19.0.1 on LIN51018450 with PID 24676 (C:\Users\MGANPATI\IdeaProjects\devTraining\boot\phonems\target\classes started by mganpati in C:\Users\MGANPATI\IdeaProjects\devTraining\boot\phonems)
-2022-12-01 12:20:42.008  INFO 24676 --- [main] com.example.phonems.PhonemsApplication   : No active profile set, falling back to 1 default profile: "default"
-2022-12-01 12:20:42.908  INFO 24676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2022-12-01 12:20:42.924  INFO 24676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-12-01 12:20:42.924  INFO 24676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-01 12:20:43.005  INFO 24676 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-12-01 12:20:43.005  INFO 24676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 933 ms
-2022-12-01 12:20:43.404  INFO 24676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2022-12-01 12:20:43.420  INFO 24676 --- [main] com.example.phonems.PhonemsApplication   : Started PhonemsApplication in 1.878 seconds (JVM running for 2.22)
-2022-12-01 12:20:55.633  INFO 24676 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-01 12:20:55.633  INFO 24676 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-12-01 12:20:55.633  INFO 24676 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-12-01 12:20:55.746  INFO 24676 --- [http-nio-8082-exec-1] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-01 12:21:11.837  INFO 24676 --- [http-nio-8082-exec-3] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-01 12:21:47.345  INFO 24676 --- [http-nio-8082-exec-4] com.example.phonems.service.ServiceImpl  : Email updated successfully
-2022-12-01 12:25:22.511  INFO 10956 --- [main] com.example.phonems.PhonemsApplication   : Starting PhonemsApplication using Java 19.0.1 on LIN51018450 with PID 10956 (C:\Users\MGANPATI\IdeaProjects\devTraining\boot\phonems\target\classes started by mganpati in C:\Users\MGANPATI\IdeaProjects\devTraining\boot\phonems)
-2022-12-01 12:25:22.511  INFO 10956 --- [main] com.example.phonems.PhonemsApplication   : No active profile set, falling back to 1 default profile: "default"
-2022-12-01 12:25:23.379  INFO 10956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2022-12-01 12:25:23.379  INFO 10956 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-12-01 12:25:23.379  INFO 10956 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-01 12:25:23.459  INFO 10956 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-12-01 12:25:23.459  INFO 10956 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 892 ms
-2022-12-01 12:25:23.852  INFO 10956 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2022-12-01 12:25:23.852  INFO 10956 --- [main] com.example.phonems.PhonemsApplication   : Started PhonemsApplication in 1.731 seconds (JVM running for 2.096)
-2022-12-01 12:25:39.879  INFO 10956 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-01 12:25:39.879  INFO 10956 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-12-01 12:25:39.879  INFO 10956 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-12-01 12:25:39.976  INFO 10956 --- [http-nio-8082-exec-1] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-01 12:26:11.193  WARN 10956 --- [http-nio-8082-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
-2022-12-01 12:26:30.132  INFO 10956 --- [http-nio-8082-exec-6] com.example.phonems.service.ServiceImpl  : Email updated successfully
-2022-12-01 12:27:04.061  INFO 24980 --- [main] com.example.phonems.PhonemsApplication   : Starting PhonemsApplication using Java 19.0.1 on LIN51018450 with PID 24980 (C:\Users\MGANPATI\IdeaProjects\devTraining\boot\phonems\target\classes started by mganpati in C:\Users\MGANPATI\IdeaProjects\devTraining\boot\phonems)
-2022-12-01 12:27:04.061  INFO 24980 --- [main] com.example.phonems.PhonemsApplication   : No active profile set, falling back to 1 default profile: "default"
-2022-12-01 12:27:04.913  INFO 24980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2022-12-01 12:27:04.928  INFO 24980 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-12-01 12:27:04.928  INFO 24980 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-01 12:27:05.008  INFO 24980 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-12-01 12:27:05.008  INFO 24980 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 898 ms
-2022-12-01 12:27:05.362  INFO 24980 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2022-12-01 12:27:05.362  INFO 24980 --- [main] com.example.phonems.PhonemsApplication   : Started PhonemsApplication in 1.698 seconds (JVM running for 2.089)
-2022-12-01 12:27:21.086  INFO 24980 --- [http-nio-8082-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-01 12:27:21.086  INFO 24980 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-12-01 12:27:21.086  INFO 24980 --- [http-nio-8082-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-12-01 12:27:21.194  INFO 24980 --- [http-nio-8082-exec-2] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-01 12:27:52.283  INFO 24980 --- [http-nio-8082-exec-3] com.example.phonems.service.ServiceImpl  : Email updated successfully
-2022-12-01 12:28:58.299  INFO 12828 --- [main] com.example.phonems.PhonemsApplication   : Starting PhonemsApplication using Java 19.0.1 on LIN51018450 with PID 12828 (C:\Users\MGANPATI\IdeaProjects\devTraining\boot\phonems\target\classes started by mganpati in C:\Users\MGANPATI\IdeaProjects\devTraining\boot\phonems)
-2022-12-01 12:28:58.299  INFO 12828 --- [main] com.example.phonems.PhonemsApplication   : No active profile set, falling back to 1 default profile: "default"
-2022-12-01 12:28:59.168  INFO 12828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2022-12-01 12:28:59.184  INFO 12828 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2022-12-01 12:28:59.184  INFO 12828 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
-2022-12-01 12:28:59.267  INFO 12828 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2022-12-01 12:28:59.267  INFO 12828 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 919 ms
-2022-12-01 12:28:59.651  INFO 12828 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2022-12-01 12:28:59.668  INFO 12828 --- [main] com.example.phonems.PhonemsApplication   : Started PhonemsApplication in 1.758 seconds (JVM running for 2.122)
-2022-12-01 12:31:08.677  INFO 12828 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2022-12-01 12:31:08.677  INFO 12828 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2022-12-01 12:31:08.677  INFO 12828 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2022-12-01 12:31:08.783  INFO 12828 --- [http-nio-8082-exec-1] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-01 12:35:30.340  INFO 12828 --- [http-nio-8082-exec-9] com.example.phonems.service.ServiceImpl  : Email updated successfully
+2022-12-05 10:36:37.196  INFO 8692 --- [main] com.example.phonems.PhonemsApplication   : Starting PhonemsApplication using Java 15 on LIN59020197 with PID 8692 (C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems\target\classes started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-05 10:36:37.216  INFO 8692 --- [main] com.example.phonems.PhonemsApplication   : No active profile set, falling back to 1 default profile: "default"
+2022-12-05 10:36:40.779  INFO 8692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2022-12-05 10:36:40.806  INFO 8692 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-05 10:36:40.807  INFO 8692 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.68]
+2022-12-05 10:36:41.098  INFO 8692 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-05 10:36:41.100  INFO 8692 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3740 ms
+2022-12-05 10:36:41.830  INFO 8692 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2022-12-05 10:36:41.850  INFO 8692 --- [main] com.example.phonems.PhonemsApplication   : Started PhonemsApplication in 5.545 seconds (JVM running for 6.321)
+2022-12-05 10:37:46.339  INFO 8692 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-05 10:37:46.340  INFO 8692 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-05 10:37:46.341  INFO 8692 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-05 10:37:46.499  INFO 8692 --- [http-nio-8082-exec-1] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-05 10:37:46.500  INFO 8692 --- [http-nio-8082-exec-1] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-05 10:37:56.320  INFO 8692 --- [http-nio-8082-exec-3] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-05 10:38:02.864  INFO 8692 --- [http-nio-8082-exec-5] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-05 10:38:02.865  WARN 8692 --- [http-nio-8082-exec-5] c.e.phonems.validations.Validation       : Last name format invalid
+2022-12-05 10:38:30.543  WARN 8692 --- [http-nio-8082-exec-6] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Unexpected character (',' (code 44)): expected a value; nested exception is com.fasterxml.jackson.core.JsonParseException: Unexpected character (',' (code 44)): expected a value<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 3, column: 22]]
+2022-12-05 10:38:42.502  INFO 8692 --- [http-nio-8082-exec-8] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-05 10:38:42.503  WARN 8692 --- [http-nio-8082-exec-8] c.e.phonems.validations.Validation       : Last name format invalid
+2022-12-05 10:38:53.232  WARN 8692 --- [http-nio-8082-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Invalid numeric value: Leading zeroes not allowed; nested exception is com.fasterxml.jackson.core.JsonParseException: Invalid numeric value: Leading zeroes not allowed<EOL> at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 5, column: 25]]
