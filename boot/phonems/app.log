@@ -159,3 +159,128 @@
 2022-12-09 12:29:46.186  INFO 12912 --- [main] com.example.phonems.service.ServiceImpl  : method started.
 2022-12-09 12:29:46.202  INFO 12912 --- [main] com.example.phonems.service.ServiceImpl  : method started.
 2022-12-09 12:29:46.230  INFO 12912 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:40:50.754  INFO 3076 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 3076 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 12:40:50.758  INFO 3076 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 12:40:54.990  INFO 3076 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 5.122 seconds (JVM running for 7.854)
+2022-12-09 12:40:56.109  INFO 3076 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:40:56.113  WARN 3076 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 12:40:56.148  INFO 3076 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:40:56.149  INFO 3076 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-09 12:40:56.150  INFO 3076 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:40:56.167  INFO 3076 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:54:27.311  INFO 13780 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 13780 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 12:54:27.314  INFO 13780 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 12:54:31.178  INFO 13780 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 4.561 seconds (JVM running for 6.705)
+2022-12-09 12:54:32.737  INFO 13780 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:54:32.738  WARN 13780 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 12:54:32.766  INFO 13780 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:54:32.767  INFO 13780 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-09 12:54:32.769  INFO 13780 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:54:32.780  INFO 13780 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:54:53.329  INFO 768 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 768 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 12:54:53.333  INFO 768 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 12:54:56.293  INFO 768 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 3.699 seconds (JVM running for 6.008)
+2022-12-09 12:54:57.122  INFO 768 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:54:57.124  INFO 768 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-09 12:54:57.124  INFO 768 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 12:54:57.124  INFO 768 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-09 14:56:17.455  INFO 12820 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 12820 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 14:56:17.459  INFO 12820 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 14:56:20.332  INFO 12820 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 3.478 seconds (JVM running for 5.51)
+2022-12-09 14:56:21.209  INFO 12820 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 14:56:21.210  WARN 12820 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 14:56:21.238  INFO 12820 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 14:56:21.239  INFO 12820 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-09 14:56:21.260  INFO 12820 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:00:28.426  INFO 19356 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 19356 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 15:00:28.429  INFO 19356 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 15:00:30.927  INFO 19356 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 3.05 seconds (JVM running for 4.977)
+2022-12-09 15:00:31.630  INFO 19356 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:00:31.631  INFO 19356 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-09 15:00:31.633  INFO 19356 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:00:31.633  INFO 19356 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-09 15:00:31.667  INFO 19356 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:00:31.680  INFO 19356 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:00:31.680  WARN 19356 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 15:03:26.585  INFO 5656 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 5656 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 15:03:26.588  INFO 5656 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 15:03:28.931  INFO 5656 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 2.976 seconds (JVM running for 4.92)
+2022-12-09 15:03:29.555  INFO 5656 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:03:29.557  INFO 5656 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-09 15:03:29.557  INFO 5656 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:03:29.557  INFO 5656 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-09 15:03:29.599  INFO 5656 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:03:29.613  INFO 5656 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:03:29.613  WARN 5656 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 15:03:29.625  INFO 5656 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:09:30.234  INFO 15200 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 15200 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 15:09:30.238  INFO 15200 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 15:09:33.013  INFO 15200 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 3.534 seconds (JVM running for 5.732)
+2022-12-09 15:09:33.648  INFO 15200 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:09:33.649  INFO 15200 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-09 15:09:33.650  INFO 15200 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:09:33.650  INFO 15200 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-09 15:09:33.684  INFO 15200 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:09:33.696  INFO 15200 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:09:33.696  WARN 15200 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 15:09:33.711  INFO 15200 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:11:13.612  INFO 12436 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 12436 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 15:11:13.615  INFO 12436 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 15:11:16.046  INFO 12436 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 2.981 seconds (JVM running for 4.902)
+2022-12-09 15:11:16.681  INFO 12436 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:11:16.683  INFO 12436 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-09 15:11:16.684  INFO 12436 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:11:16.684  INFO 12436 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-09 15:11:16.718  INFO 12436 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:11:16.731  INFO 12436 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:11:16.731  WARN 12436 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 15:11:16.745  INFO 12436 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:11:16.746  WARN 12436 --- [main] c.e.phonems.validations.Validation       : Age Invalid
+2022-12-09 15:12:46.784  INFO 2632 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 2632 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 15:12:46.787  INFO 2632 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 15:12:49.171  INFO 2632 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 2.924 seconds (JVM running for 4.81)
+2022-12-09 15:12:49.855  INFO 2632 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:12:49.856  WARN 2632 --- [main] c.e.phonems.validations.Validation       : Age Invalid
+2022-12-09 15:12:49.857  INFO 2632 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:12:49.857  WARN 2632 --- [main] c.e.phonems.validations.Validation       : Age Invalid
+2022-12-09 15:12:49.858  INFO 2632 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 15:12:49.859  WARN 2632 --- [main] c.e.phonems.validations.Validation       : Age Invalid
+2022-12-09 16:11:03.653  INFO 13468 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 13468 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 16:11:03.654  INFO 13468 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 16:11:04.776  INFO 13468 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 1.401 seconds (JVM running for 2.234)
+2022-12-09 16:11:05.144  INFO 13468 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:11:05.144  WARN 13468 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:11:05.145  INFO 13468 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:11:05.145  WARN 13468 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:11:05.146  INFO 13468 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:11:05.146  WARN 13468 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:11:05.147  INFO 13468 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:11:05.147  WARN 13468 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:11:05.147  INFO 13468 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:11:05.147  WARN 13468 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:12:25.967  INFO 20940 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 20940 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 16:12:25.970  INFO 20940 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 16:12:27.465  INFO 20940 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 1.845 seconds (JVM running for 2.991)
+2022-12-09 16:12:27.914  INFO 20940 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:12:27.918  WARN 20940 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:12:27.918  INFO 20940 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:12:27.918  WARN 20940 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:12:27.919  INFO 20940 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:12:27.920  WARN 20940 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:12:27.920  INFO 20940 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:12:27.920  WARN 20940 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:12:27.920  INFO 20940 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:12:27.921  WARN 20940 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:20:37.798  INFO 2572 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 2572 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-09 16:20:37.800  INFO 2572 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-09 16:20:39.004  INFO 2572 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 1.46 seconds (JVM running for 2.303)
+2022-12-09 16:20:39.328  INFO 2572 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:20:39.329  WARN 2572 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-09 16:20:39.329  INFO 2572 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:20:39.329  WARN 2572 --- [main] c.e.phonems.validations.Validation       : Age Invalid
+2022-12-09 16:20:39.330  INFO 2572 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:20:39.331  WARN 2572 --- [main] c.e.phonems.validations.Validation       : First name format invalid
+2022-12-09 16:20:39.331  INFO 2572 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:20:39.331  WARN 2572 --- [main] c.e.phonems.validations.Validation       : Last name format invalid
+2022-12-09 16:20:39.331  INFO 2572 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-09 16:20:39.332  WARN 2572 --- [main] c.e.phonems.validations.Validation       : Email format invalid

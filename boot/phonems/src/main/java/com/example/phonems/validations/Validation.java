@@ -1,5 +1,6 @@
 package com.example.phonems.validations;
 
+import com.example.phonems.entity.Contact;
 import com.example.phonems.exceptions.EnterValidDataException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -55,6 +56,7 @@ public class Validation {
         }
         return age;
     }
+
 
 
 }
