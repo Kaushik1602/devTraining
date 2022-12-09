@@ -6,8 +6,18 @@ public class Contact {
     private String lastName;
     private Long phoneNumber;
     private String emailId;
-
     private Integer age;
+
+    public Contact(String firstName, String lastName, Long phoneNumber, String emailId, Integer age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.emailId = emailId;
+        this.age = age;
+    }
+
+    public Contact() {
+    }
 
     public Integer getAge() {
         return age;

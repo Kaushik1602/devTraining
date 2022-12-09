@@ -18,7 +18,6 @@ import java.util.List;
 public class ServiceImpl implements IService {
 
     private List<Contact> contactList = new ArrayList<>();
-
     Logger logger = LoggerFactory.getLogger(ServiceImpl.class);
 
     public List<Contact> getContactList() {
@@ -116,7 +115,7 @@ public class ServiceImpl implements IService {
         logger.info("method started.");
         validation.validateNumber(phoneNumber);
         for (Contact contact1 : contactList) {
-            if (contact1.getPhoneNumber() == phoneNumber) {
+            if (contact1.getPhoneNumber() == phoneNumber){
                 contact1.setPhoneNumber(validation.validateNumber(contact.getPhoneNumber()));
                 contact1.setFirstName(validation.validateFirstName(contact.getFirstName()));
                 contact1.setLastName(validation.validateLastName(contact.getLastName()));
