@@ -111,7 +111,7 @@ public class ServiceImpl implements IService {
     }
 
     @Override
-    public Contact updateEmail(long phoneNumber, Contact contact) {
+    public Contact updateContact(long phoneNumber, Contact contact) {
         logger.info("method started.");
         validation.validateNumber(phoneNumber);
         for (Contact contact1 : contactList) {

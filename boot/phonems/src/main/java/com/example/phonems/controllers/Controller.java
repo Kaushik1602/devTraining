@@ -46,8 +46,8 @@ public class Controller {
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/contacts/update/{phoneNumber}")
-    private Contact updateEmail(@PathVariable long phoneNumber, @RequestBody Contact contact) {
-        return service.updateEmail(phoneNumber, contact);
+    private Contact updateContact(@PathVariable long phoneNumber, @RequestBody Contact contact) {
+        return service.updateContact(phoneNumber, contact);
     }
 
 
