@@ -1,70 +1,79 @@
-2022-12-12 11:46:29.172  INFO 9452 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 9452 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
-2022-12-12 11:46:29.194  INFO 9452 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
-2022-12-12 11:46:31.859  INFO 9452 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2022-12-12 11:46:31.859  INFO 9452 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2022-12-12 11:46:31.859  INFO 9452 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
-2022-12-12 11:46:31.904  INFO 9452 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 3.287 seconds (JVM running for 5.503)
-2022-12-12 11:46:32.660  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.660  WARN 9452 --- [main] com.example.phonems.service.ServiceImpl  : List is Empty
-2022-12-12 11:46:32.686  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.686  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-12 11:46:32.686  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.690  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
-2022-12-12 11:46:32.695  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.695  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-12 11:46:32.695  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.711  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.719  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-12 11:46:32.720  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.720  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
-2022-12-12 11:46:32.720  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.720  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : contact deleted.
-2022-12-12 11:46:32.720  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.720  WARN 9452 --- [main] c.e.phonems.validations.Validation       : Number format invalid
-2022-12-12 11:46:32.736  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.742  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-12 11:46:32.742  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.742  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Contact list displayed.
-2022-12-12 11:46:32.742  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.742  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Contact list displayed.
-2022-12-12 11:46:32.752  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.752  WARN 9452 --- [main] c.e.phonems.validations.Validation       : Number format invalid
-2022-12-12 11:46:32.753  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.754  WARN 9452 --- [main] c.e.phonems.validations.Validation       : Age Invalid
-2022-12-12 11:46:32.754  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.754  WARN 9452 --- [main] c.e.phonems.validations.Validation       : First name format invalid
-2022-12-12 11:46:32.754  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.754  WARN 9452 --- [main] c.e.phonems.validations.Validation       : Last name format invalid
-2022-12-12 11:46:32.754  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.754  WARN 9452 --- [main] c.e.phonems.validations.Validation       : Email format invalid
-2022-12-12 11:46:32.767  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.767  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-12 11:46:32.842  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:32.842  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Contact list displayed.
-2022-12-12 11:46:33.036  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.036  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-12 11:46:33.072  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.073  WARN 9452 --- [main] c.e.phonems.validations.Validation       : Age Invalid
-2022-12-12 11:46:33.073  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.073  WARN 9452 --- [main] c.e.phonems.validations.Validation       : Age Invalid
-2022-12-12 11:46:33.073  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.073  WARN 9452 --- [main] c.e.phonems.validations.Validation       : Age Invalid
-2022-12-12 11:46:33.086  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.088  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
-2022-12-12 11:46:33.088  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.088  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Email updated successfully
-2022-12-12 11:46:33.089  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.089  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
-2022-12-12 11:46:33.091  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.091  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.091  WARN 9452 --- [main] c.e.phonems.validations.Validation       : Number format invalid
-2022-12-12 11:46:33.099  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.103  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
-2022-12-12 11:46:33.103  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.103  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
-2022-12-12 11:46:33.103  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.130  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.130  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
-2022-12-12 11:46:33.130  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
-2022-12-12 11:46:33.132  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
-2022-12-12 11:46:33.132  INFO 9452 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:47:54.707  INFO 1404 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 1404 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-13 16:47:54.722  INFO 1404 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-13 16:47:57.487  INFO 1404 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-12-13 16:47:57.487  INFO 1404 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-12-13 16:47:57.488  INFO 1404 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2022-12-13 16:47:57.524  INFO 1404 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 3.378 seconds (JVM running for 5.585)
+2022-12-13 16:47:58.210  INFO 1404 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:47:58.211  INFO 1404 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-13 16:47:58.268  INFO 1404 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:47:58.269  INFO 1404 --- [main] com.example.phonems.service.ServiceImpl  : contact deleted.
+2022-12-13 16:48:15.745  INFO 5948 --- [main] c.e.phonems.PhonemsApplicationTests      : Starting PhonemsApplicationTests using Java 15 on LIN59020197 with PID 5948 (started by kabankar in C:\Users\KABANKAR\Kaushik\devTraining\boot\phonems)
+2022-12-13 16:48:15.749  INFO 5948 --- [main] c.e.phonems.PhonemsApplicationTests      : No active profile set, falling back to 1 default profile: "default"
+2022-12-13 16:48:18.096  INFO 5948 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2022-12-13 16:48:18.098  INFO 5948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2022-12-13 16:48:18.100  INFO 5948 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2022-12-13 16:48:18.133  INFO 5948 --- [main] c.e.phonems.PhonemsApplicationTests      : Started PhonemsApplicationTests in 2.902 seconds (JVM running for 5.071)
+2022-12-13 16:48:18.823  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:18.823  WARN 5948 --- [main] com.example.phonems.service.ServiceImpl  : List is Empty
+2022-12-13 16:48:18.849  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:18.851  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-13 16:48:18.851  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:18.852  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-13 16:48:18.869  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:18.870  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-13 16:48:18.871  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:18.883  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:18.885  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-13 16:48:18.976  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:18.976  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : contact deleted.
+2022-12-13 16:48:19.018  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.020  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-13 16:48:19.020  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.020  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-13 16:48:19.020  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.021  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : contact deleted.
+2022-12-13 16:48:19.021  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.022  WARN 5948 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-13 16:48:19.022  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.034  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.035  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-13 16:48:19.035  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.035  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact list displayed.
+2022-12-13 16:48:19.036  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.036  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact list displayed.
+2022-12-13 16:48:19.043  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.044  WARN 5948 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-13 16:48:19.047  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.048  WARN 5948 --- [main] c.e.phonems.validations.Validation       : Age Invalid
+2022-12-13 16:48:19.049  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.049  WARN 5948 --- [main] c.e.phonems.validations.Validation       : First name format invalid
+2022-12-13 16:48:19.050  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.050  WARN 5948 --- [main] c.e.phonems.validations.Validation       : Last name format invalid
+2022-12-13 16:48:19.051  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.052  WARN 5948 --- [main] c.e.phonems.validations.Validation       : Email format invalid
+2022-12-13 16:48:19.061  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.062  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-13 16:48:19.064  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.064  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact list displayed.
+2022-12-13 16:48:19.267  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.268  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-13 16:48:19.287  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.288  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Contact added.
+2022-12-13 16:48:19.288  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.288  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Email updated successfully
+2022-12-13 16:48:19.289  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.289  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-13 16:48:19.290  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.291  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.291  WARN 5948 --- [main] c.e.phonems.validations.Validation       : Number format invalid
+2022-12-13 16:48:19.299  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.300  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-13 16:48:19.300  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.301  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-13 16:48:19.301  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.309  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.309  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-13 16:48:19.310  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.
+2022-12-13 16:48:19.310  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : Found Contact
+2022-12-13 16:48:19.311  INFO 5948 --- [main] com.example.phonems.service.ServiceImpl  : method started.

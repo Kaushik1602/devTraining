@@ -6,16 +6,12 @@ import com.example.phonems.exceptions.ContactAlreadyPresentException;
 import com.example.phonems.exceptions.ContactNotFoundException;
 import com.example.phonems.exceptions.EnterValidDataException;
 import com.example.phonems.service.IService;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import static org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder.*;
-
 
 import java.util.List;
 
@@ -111,7 +107,7 @@ class PhonemsApplicationTests {
 	}
 
 	@Test
-	void testsearchContactByGivenPhoneNo() throws ContactNotFoundException {
+	void testsearchContactByGivenPhoneNo(){
 		contact.setPhoneNumber(9699310807L);
 		Contact expected = service.searchContactByGivenPhoneNo(contact.getPhoneNumber());
 		Contact actual = service.searchContactByGivenPhoneNo(expected.getPhoneNumber());
@@ -139,7 +135,7 @@ class PhonemsApplicationTests {
 		Contact expected = service.searchContactByGivenPhoneNo(contact.getPhoneNumber());
 		assertEquals(expected,actual);
 		assertThrows(ContactNotFoundException.class,()->service.updateContact(9090909090L,contact),
-				"Contact Already Exists");
+				"Contact Not Present");
 		assertThrows(EnterValidDataException.class,()->service.updateContact(909090990L,contact),
 				"Number must be 10 digit starting with 9,8,7 or 6 and it cannot be null");
 	}
@@ -151,6 +147,8 @@ class PhonemsApplicationTests {
 		String expected = service.searchContactByGivenPhoneNo(contact.getPhoneNumber())+" :contact deleted.";
 		String actual = service.removeContact(contact.getPhoneNumber());
 		assertEquals(expected,actual);
+		assertThrows(EnterValidDataException.class,()->service.removeContact(90909090909L));
+		assertThrows(ContactNotFoundException.class,()->service.removeContact(9991234567L));
 	}
 
 	@Test
@@ -175,6 +173,14 @@ class PhonemsApplicationTests {
 		this.mockMvc.perform(get("/contacts/view")
 				.contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
+	}
+
+	@Test
+	void testControllerDelete() throws Exception {
+		contact.setPhoneNumber(9900990099L);
+		service.addContact(contact);
+		this.mockMvc.perform(delete("/contacts/delete/9900990099"))
+				.andExpect(status().isAccepted());
 	}
 
 
