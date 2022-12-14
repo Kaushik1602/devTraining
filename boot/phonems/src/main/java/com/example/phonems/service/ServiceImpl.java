@@ -102,6 +102,7 @@ public class ServiceImpl implements IService {
             }
         }
         if (contact1 == null) {
+            logger.warn("Contact not found");
             throw new ContactNotFoundException("number not found");
         }
 
@@ -126,13 +127,16 @@ public class ServiceImpl implements IService {
                 return contact1;
             }
         }
+        logger.warn("Contact not found");
         throw new ContactNotFoundException("Contact not found.");
     }
 
     public void uniqueCheck(long number) {
         for (Contact contact : getContactList()) {
-            if (contact.getPhoneNumber() == number)
+            if (contact.getPhoneNumber() == number){
+                logger.warn("Number already present");
                 throw new ContactAlreadyPresentException("Contact Already Exists");
+            }
         }
     }
 

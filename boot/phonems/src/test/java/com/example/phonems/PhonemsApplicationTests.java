@@ -6,6 +6,7 @@ import com.example.phonems.exceptions.ContactAlreadyPresentException;
 import com.example.phonems.exceptions.ContactNotFoundException;
 import com.example.phonems.exceptions.EnterValidDataException;
 import com.example.phonems.service.IService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -48,7 +49,7 @@ class PhonemsApplicationTests {
     }
 
     @Test
-    @Order(2)
+    @Order(3)
     void testAddContact() {
         Contact actual = service.addContact(contact);
         Contact expected = service.searchContactByGivenPhoneNo(contact.getPhoneNumber());
@@ -56,7 +57,7 @@ class PhonemsApplicationTests {
     }
 
 	@Test
-	@Order(3)
+	@Order(4)
 	void testContactAlreadyPresentForAdd(){
 		contact.setPhoneNumber(9999999999L);
 		service.addContact(contact);
@@ -164,10 +165,47 @@ class PhonemsApplicationTests {
 				.contentType(MediaType.APPLICATION_JSON)
 				.content(body))
 				.andExpect(status().isCreated());
+		this.mockMvc.perform(post("/contacts/add")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(body))
+				.andExpect(status().isBadRequest());
+		ObjectMapper mapper = new ObjectMapper();
+		contact.setPhoneNumber(88888888L);
+		this.mockMvc.perform(post("/contacts/add")
+				.contentType(MediaType.APPLICATION_JSON)
+				.content(mapper.writeValueAsString(contact)))
+				.andExpect(status().isUnprocessableEntity());
+		contact.setPhoneNumber(9922992299L);
+		contact.setAge(0);
+		this.mockMvc.perform(post("/contacts/add")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(mapper.writeValueAsString(contact)))
+				.andExpect(status().isUnprocessableEntity());
+		contact.setAge(22);
+		contact.setFirstName("ka");
+		this.mockMvc.perform(post("/contacts/add")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(mapper.writeValueAsString(contact)))
+				.andExpect(status().isUnprocessableEntity());
+		contact.setFirstName("kaushik");
+		contact.setLastName("ba");
+		this.mockMvc.perform(post("/contacts/add")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(mapper.writeValueAsString(contact)))
+				.andExpect(status().isUnprocessableEntity());
+		contact.setLastName("bankar");
+		contact.setEmailId("email@gmail.coccc");
+		this.mockMvc.perform(post("/contacts/add")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(mapper.writeValueAsString(contact)))
+				.andExpect(status().isUnprocessableEntity());
 	}
-
 	@Test
+	@Order(2)
 	void testControllerViewAll() throws Exception {
+		this.mockMvc.perform(get("/contacts/view")
+						.contentType(MediaType.APPLICATION_JSON))
+				.andExpect(status().isNotFound());
 		contact.setPhoneNumber(9998889998L);
 		service.addContact(contact);
 		this.mockMvc.perform(get("/contacts/view")
@@ -176,12 +214,19 @@ class PhonemsApplicationTests {
 	}
 
 	@Test
-	void testControllerDelete() throws Exception {
+	void testControllerForRemove() throws Exception {
 		contact.setPhoneNumber(9900990099L);
 		service.addContact(contact);
 		this.mockMvc.perform(delete("/contacts/delete/9900990099"))
 				.andExpect(status().isAccepted());
+		this.mockMvc.perform(delete("/contacts/delete/9900999999"))
+				.andExpect(status().isNotFound());
+		this.mockMvc.perform(delete("/contacts/delete/99009099"))
+				.andExpect(status().isUnprocessableEntity());
+
 	}
+
+
 
 
 }
