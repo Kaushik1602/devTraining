@@ -6,9 +6,14 @@ import com.example.phonems.exceptions.ContactAlreadyPresentException;
 import com.example.phonems.exceptions.ContactNotFoundException;
 import com.example.phonems.exceptions.EnterValidDataException;
 import com.example.phonems.service.IService;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -54,19 +59,21 @@ class PhonemsApplicationTests {
         Contact actual = service.addContact(contact);
         Contact expected = service.searchContactByGivenPhoneNo(contact.getPhoneNumber());
         assertEquals(expected,actual);
+		assertThrows(ContactAlreadyPresentException.class,()->service.addContact(contact),
+				"Contact Already Exists");
     }
 
-	@Test
+	/*@Test
 	@Order(4)
 	void testContactAlreadyPresentForAdd(){
 		contact.setPhoneNumber(9999999999L);
 		service.addContact(contact);
 		assertThrows(ContactAlreadyPresentException.class,()->service.addContact(contact),
 				"Contact Already Exists");
-	}
+	}*/
 
 
-	@Test
+	/*@Test
 	void testInvalidDataForAddContact(){
 		contact.setPhoneNumber(999L);
 		assertThrows(EnterValidDataException.class,()->service.addContact(contact),
@@ -90,7 +97,7 @@ class PhonemsApplicationTests {
 		assertThrows(EnterValidDataException.class,()->service.addContact(contact),
 				"Enter valid Email");
 
-	}
+	}*/
 
 	@Test
 	void testViewAll(){
@@ -169,7 +176,7 @@ class PhonemsApplicationTests {
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(body))
 				.andExpect(status().isBadRequest());
-		ObjectMapper mapper = new ObjectMapper();
+		/*ObjectMapper mapper = new ObjectMapper();
 		contact.setPhoneNumber(88888888L);
 		this.mockMvc.perform(post("/contacts/add")
 				.contentType(MediaType.APPLICATION_JSON)
@@ -198,7 +205,7 @@ class PhonemsApplicationTests {
 		this.mockMvc.perform(post("/contacts/add")
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(mapper.writeValueAsString(contact)))
-				.andExpect(status().isUnprocessableEntity());
+				.andExpect(status().isUnprocessableEntity());*/
 	}
 	@Test
 	@Order(2)
@@ -227,6 +234,48 @@ class PhonemsApplicationTests {
 	}
 
 
+	private static Object[] contacts(){
+		return new Object[][]{
+			{969931007L,33,"kaushik","bankar","bankar@gmail.com"},
+			{9699318807L,3,"kaushik","bankar","bankar@gmail.com"},
+			{9699318807L,33,"ka","bankar","bankar@gmail.com"},
+			{9699318807L,33,"kaushik","ar","bankar@gmail.com"},
+			{9699318807L,33,"kaushik","bankar","bankar@gmail.ckkom"},
+		};
+	}
+
+	@ParameterizedTest()
+	@MethodSource("contacts")
+	public void validationTestWithMethodSource(long num, int age, String fname, String lname, String email){
+		contact.setPhoneNumber(num);
+		contact.setAge(age);
+		contact.setFirstName(fname);
+		contact.setLastName(lname);
+		contact.setEmailId(email);
+		assertThrows(EnterValidDataException.class,()->service.addContact(contact));
+	}
+
+	@ParameterizedTest
+	@MethodSource("contacts")
+	public void validateDataForControllerTest(long num, int age, String fName, String lName, String email) throws Exception {
+		/*contact.setPhoneNumber(num);
+		contact.setAge(age);
+		contact.setFirstName(fName);
+		contact.setLastName(lName);
+		contact.setEmailId(email);*/
+		String body1 = "{\n"+
+				"\"firstName\":\""+fName+"\",\n"+
+				"\"lastName\":\""+lName+"\",\n"+
+				"\"phoneNumber\":"+num+",\n"+
+				"\"emailId\":\""+email+"\",\n"+
+				"\"age\":"+age+
+				"\n	}";
+		ObjectMapper mapper = new ObjectMapper();
+		this.mockMvc.perform(post("/contacts/add")
+						.contentType(MediaType.APPLICATION_JSON)
+						.content(body1))
+				.andExpect(status().isUnprocessableEntity());
+	}
 
 
 }
